@@ -27,28 +27,24 @@
             flex-wrap: wrap;
             text-align: center;
             max-width: 600px;
-            margin-top: -10vh; /* Adjusted for more space above */
-        }
-        
-        .caption {
-            font-size: 1.5rem; /* Smaller than the original to fit as a caption */
-            margin-top: 20vh; /* Space between icons and caption */
+            margin: 0; /* Adjusted to add space on top */
         }
         
         .icon-link {
             color: black;
             text-decoration: none;
-            display: block;
-            margin: 20px 0; /* Increased vertical space between icons and titles */
+            display: inline-block; /* Allows horizontal alignment with spacing */
+            margin: 20px 30px; /* Increased horizontal margin and space below icons */
+            vertical-align: top; /* Keeps items aligned at the top */
         }
         
         .parallax-icon {
             width: 100px;
             height: 100px;
-            margin: 0 10px;
+            margin-bottom: 15px; /* Increased space between the icon and the text */
             position: relative;
-            border-radius: 50%; /* Ensure the icon container is circular */
-            overflow: hidden; /* Ensure layers don't exceed the circular bounds */
+            border-radius: 50%;
+            overflow: hidden;
         }
         
         .layer {
@@ -59,6 +55,7 @@
             left: 0;
             background-size: cover;
             border-radius: 50%;
+            transition: transform 0.2s ease-out;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -75,7 +72,7 @@
 <body>
     <div class="container">
         <a href="/rose" class="icon-link">
-            <div class="parallax-icon">
+            <div class="parallax-icon" data-icon="rose">
                 <div class="layer" style="background-image: url('/rose/back.png');"></div>
                 <div class="layer" style="background-image: url('/rose/middle.png');"></div>
                 <div class="layer" style="background-image: url('/rose/front.png');"></div>
@@ -83,7 +80,7 @@
             Rose
         </a>
         <a href="/petal" class="icon-link">
-            <div class="parallax-icon">
+            <div class="parallax-icon" data-icon="petal">
                 <div class="layer" style="background-image: url('/petal/back.png');"></div>
                 <div class="layer" style="background-image: url('/petal/middle.png');"></div>
                 <div class="layer" style="background-image: url('/petal/front.png');"></div>
@@ -91,9 +88,23 @@
             Petal
         </a>
     </div>
-    <div class="caption">Launching Valentine's Day:</div>
+    <div class="caption" style="margin-top: 20px;">Launching Valentine's Day:</div>
     <script>
-        // Parallax effect script remains the same
+        document.querySelectorAll('.parallax-icon').forEach(icon => {
+            icon.addEventListener('mousemove', e => {
+                const rect = icon.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const dx = x - (rect.width / 2);
+                const dy = y - (rect.height / 2);
+
+                const layerOffsets = [0.05, 0.1, 0.15];
+                icon.querySelectorAll('.layer').forEach((layer, index) => {
+                    const offset = layerOffsets[index % layerOffsets.length];
+                    layer.style.transform = `translate(${dx * offset}px, ${dy * offset}px)`;
+                });
+            });
+        });
     </script>
 </body>
 </html>
