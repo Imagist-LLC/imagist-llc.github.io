@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagist</title>
-    <description>Purveyor of finely crafted applications for the Apple Vision Pro.</description>
     <meta name="apple-itunes-app" content="app-id=6477764698">
     <style>
         body {
@@ -37,12 +36,25 @@
             text-decoration: none;
         }
         
-        img {
-            width: 50px; /* Example size */
-            height: 50px; /* Maintain aspect ratio */
-            border-radius: 50%; /* Circular clip */
+        /* Parallax icon container */
+        .parallax-icon {
+            width: 100px; /* Example size */
+            height: 100px;
+            position: relative;
+            margin: 20px auto; /* Center the container */
         }
         
+        .layer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            border-radius: 50%; /* Circular clip */
+            transition: transform 0.2s ease-out; /* Smooth transition for parallax effect */
+        }
+
         /* Adjustments for dark theme */
         @media (prefers-color-scheme: dark) {
             body {
@@ -58,18 +70,36 @@
 <body>
     <div class="container">
         <h1>Launching Valentine's Day:</h1>
-        <p></p>
+        <div class="parallax-icon">
+            <div class="layer" style="background-image: url('/rose/front.png');"></div>
+            <div class="layer" style="background-image: url('/rose/middle.png');"></div>
+            <div class="layer" style="background-image: url('/rose/middle.png');"></div>
+        </div>
         <ul>
             <li>
-                 <img src="/rose/icon.jpg" alt="Rose Icon">
                 <a href="/rose">Rose</a> - Weather at your Fingertips
-               
             </li>
             <li>
-                 <img src="/petal/icon.jpg" alt="Petal Icon">
                 <a href="/petal">Petal</a> - A Photo Editor with Depth
             </li>
         </ul>
     </div>
+    <script>
+        document.querySelector('.parallax-icon').addEventListener('mousemove', function(e) {
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const dx = x - (rect.width / 2);
+            const dy = y - (rect.height / 2);
+
+            // Adjust these values to control the parallax strength
+            const layerOffsets = [0.05, 0.1, 0.15];
+
+            document.querySelectorAll('.layer').forEach((layer, index) => {
+                const offset = layerOffsets[index % layerOffsets.length];
+                layer.style.transform = `translate(${dx * offset}px, ${dy * offset}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
