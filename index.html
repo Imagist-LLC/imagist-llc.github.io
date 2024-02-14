@@ -21,27 +21,33 @@
         }
         
         .container {
+            display: flex;
+            justify-content: space-around; /* Align items side by side */
+            align-items: center;
+            flex-wrap: wrap; /* Ensure responsiveness */
             text-align: center;
-            max-width: 90%;
+            max-width: 600px; /* Adjust based on your preference */
             margin-top: -20vh;
         }
         
         h1 {
             font-size: 2.5rem;
+            width: 100%; /* Ensure the title spans the full width */
         }
         
-        p, a {
+        a {
             font-size: 1.2rem;
-            color: black; /* Adjusted for better visibility */
+            color: black;
             text-decoration: none;
+            display: block; /* Make links block to align text below icons */
+            margin: 10px 0; /* Space out links */
         }
         
-        /* Parallax icon container */
         .parallax-icon {
-            width: 100px; /* Example size */
+            width: 100px;
             height: 100px;
+            margin: 0 10px; /* Space out icons */
             position: relative;
-            margin: 20px auto; /* Center the container */
         }
         
         .layer {
@@ -51,17 +57,42 @@
             top: 0;
             left: 0;
             background-size: cover;
-            border-radius: 50%; /* Circular clip */
-            transition: transform 0.2s ease-out; /* Smooth transition for parallax effect */
+            border-radius: 50%;
+            transition: transform 0.2s ease-out;
         }
 
-        /* Adjustments for dark theme */
+        /* Shimmer effect */
+        .parallax-icon:hover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none; /* Ignore mouse events */
+            animation: shimmer 1.5s infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: scale(0.5) translate(-200%, -200%);
+            }
+            50% {
+                transform: scale(0.5) translate(200%, 200%);
+            }
+            100% {
+                transform: scale(0.5) translate(-200%, -200%);
+            }
+        }
+
         @media (prefers-color-scheme: dark) {
             body {
                 color: #f4f4f4;
                 background-color: #333;
             }
-            p, a {
+            a {
                 color: white;
             }
         }
@@ -70,35 +101,32 @@
 <body>
     <div class="container">
         <h1>Launching Valentine's Day:</h1>
-        <div class="parallax-icon">
+        <div class="parallax-icon" data-icon="rose">
             <div class="layer" style="background-image: url('/rose/back.png');"></div>
             <div class="layer" style="background-image: url('/rose/middle.png');"></div>
             <div class="layer" style="background-image: url('/rose/front.png');"></div>
+            <a href="/rose">Rose</a>
         </div>
-        
-                <a href="/rose">Rose</a> - Weather at your Fingertips
-           <div class="parallax-icon">
+        <div class="parallax-icon" data-icon="petal">
             <div class="layer" style="background-image: url('/petal/back.png');"></div>
             <div class="layer" style="background-image: url('/petal/middle.png');"></div>
             <div class="layer" style="background-image: url('/petal/front.png');"></div>
-        </div> 
-                <a href="/petal">Petal</a> - A Photo Editor with Depth
-           
+            <a href="/petal">Petal</a>
+        </div>
     </div>
     <script>
-        document.querySelector('.parallax-icon').addEventListener('mousemove', function(e) {
-            const rect = e.target.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const dx = x - (rect.width / 2);
-            const dy = y - (rect.height / 2);
-
-            // Adjust these values to control the parallax strength
-            const layerOffsets = [0.05, 0.1, 0.15];
-
-            document.querySelectorAll('.layer').forEach((layer, index) => {
-                const offset = layerOffsets[index % layerOffsets.length];
-                layer.style.transform = `translate(${dx * offset}px, ${dy * offset}px)`;
+        document.querySelectorAll('.parallax-icon').forEach((icon) => {
+            icon.addEventListener('mousemove', (e) => {
+                const rect = icon.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const dx = x - (rect.width / 2);
+                const dy = y - (rect.height / 2);
+                const layerOffsets = [0.05, 0.1, 0.15];
+                icon.querySelectorAll('.layer').forEach((layer, index) => {
+                    const offset = layerOffsets[index % layerOffsets.length];
+                    layer.style.transform = `translate(${dx * offset}px, ${dy * offset}px)`;
+                });
             });
         });
     </script>
