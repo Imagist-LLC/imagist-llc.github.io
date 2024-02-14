@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose</title>
+    <meta name="apple-itunes-app" content="app-id=6477804177">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Adjusted to layout content vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 90%; /* Adjust container width */
+            margin-top: -20vh; /* Adjust based on your content */
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        p, a { /* Make links white */
+            font-size: 1.2rem;
+            color: white; /* Make text color white for light theme */
+            text-decoration: none; /* Optional: Removes underline from links */
+        }
+        
+        video {
+            width: 100%; /* Make video fill the container width */
+            height: auto; /* Adjust height automatically */
+            max-height: 60vh; /* Limit video height */
+        }
+
+        /* Dark theme styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #f4f4f4;
+                background-color: #333;
+            }
+            p, a { /* Ensure links are white in dark mode as well */
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rose</h1>
+        <p>Weather at your fingertips. For the  Apple Vision Pro.</p>
+        
+        <p><a href="https://apps.apple.com/us/app/rose/id6477804177" target="_blank">Get it on the App Store</a></p>
+    </div>
+</body>
+</html>
