@@ -5,72 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rose</title>
     <meta name="apple-itunes-app" content="app-id=6478182067">
-    <style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+        background-color: #f4f4f4;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .icon-container {
+        width: 100px; /* Adjust based on your icon size */
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto; /* Ensure it's centered horizontally */
+    }
+    .layer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        border-radius: 50%; /* Ensure layers are also circular */
+        transition: transform 0.2s ease-out; /* Smooth transition for parallax effect */
+    }
+    .container {
+        text-align: center;
+        max-width: 90%; /* Adjust container width */
+        margin: auto; /* Center the container horizontally */
+        display: flex; /* Use flex to center children vertically and horizontally */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        align-items: center; /* Center children horizontally */
+        height: 100%; /* Take full height of its parent */
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    p, a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+    }
+    video {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+    }
+    @media (prefers-color-scheme: dark) {
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column; /* Adjusted to layout content vertically */
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s, color 0.3s;
+            color: #f4f4f4;
+            background-color: #333;
         }
-        .icon-container {
-    width: 100px; /* Adjust based on your icon size */
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-}
+        p, a {
+            color: white;
+        }
+    }
+</style>
 
-.layer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    border-radius: 50%; /* Ensure layers are also circular */
-    transition: transform 0.2s ease-out; /* Smooth transition for parallax effect */
-}
-
-        .container {
-            text-align: center;
-            max-width: 90%; /* Adjust container width */
-            margin-top: -20vh; /* Adjust based on your content */
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        p, a { /* Make links white */
-            font-size: 1.2rem;
-            color: white; /* Make text color white for light theme */
-            text-decoration: none; /* Optional: Removes underline from links */
-        }
-        
-        video {
-            width: 100%; /* Make video fill the container width */
-            height: auto; /* Adjust height automatically */
-            max-height: 60vh; /* Limit video height */
-        }
-
-        /* Dark theme styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                color: #f4f4f4;
-                background-color: #333;
-            }
-            p, a { /* Ensure links are white in dark mode as well */
-                color: white;
-            }
-        }
-    </style>
 
     <script>
 document.querySelector('.icon-container').addEventListener('mousemove', function(e) {
@@ -102,9 +102,9 @@ document.querySelector('.icon-container').addEventListener('mousemove', function
 </div>
 
         <h1>Bloom</h1>
-        <p>Weather at your fingertips. For the  Apple Vision Pro.</p>
-        
-        <p><a href="https://apps.apple.com/us/app/rose/id6478182067" target="_blank">Preorder the Apple Vision Pro App Store</a></p>
+        <p>A RAW Editior for the Apple Vision Pro.</p>
+         <p>Available March 1.</p>
+        <p><a href="https://apps.apple.com/us/app/rose/id6478182067" target="_blank">Preorder on the Apple Vision Pro App Store</a></p>
     </div>
 </body>
 </html>
