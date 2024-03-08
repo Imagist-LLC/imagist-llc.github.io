@@ -36,6 +36,7 @@
             display: inline-block; /* Allows horizontal alignment with spacing */
             margin: 20px 30px; /* Increased horizontal margin and space below icons */
             vertical-align: top; /* Keeps items aligned at the top */
+            text-align: center; /* Centers the text under the icon */
         }
         
         .parallax-icon {
@@ -87,17 +88,14 @@
             </div>
             Petal
         </a>
-    </div>
-
-      <a href="/bloom" class="icon-link">
+        <a href="/bloom" class="icon-link">
             <div class="parallax-icon" data-icon="bloom">
                 <div class="layer" style="background-image: url('/bloom/back.png');"></div>
                 <div class="layer" style="background-image: url('/bloom/middle.png');"></div>
                 <div class="layer" style="background-image: url('/bloom/front.png');"></div>
-            </div>Bloom
+            </div>
+            Bloom
         </a>
-    <div class="caption" style="margin-top: 20px;"></div>
-<p><div class="container">
         <a href="/flourish" class="icon-link">
             <div class="parallax-icon" data-icon="flourish">
                 <div class="layer" style="background-image: url('/flourish/back.png');"></div>
@@ -107,7 +105,6 @@
             Flourish (Coming April 1st)
         </a>
     </div>
-    </p>
     <script>
         document.querySelectorAll('.parallax-icon').forEach(icon => {
             icon.addEventListener('mousemove', e => {
