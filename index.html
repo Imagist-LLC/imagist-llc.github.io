@@ -7,7 +7,71 @@
     <meta name="apple-itunes-app" content="app-id=6478552032">
     <link rel="stylesheet" href="/styles.css">
 <script src="/scripts.js"></script>
+  <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             height: 100vh;
+             color: #333;
+             background-color: #f4f4f4;
+             transition: background-color 0.3s, color 0.3s;
+         }
 
+         .container {
+             display: flex;
+             justify-content: space-around;
+             align-items: center;
+             flex-wrap: wrap;
+             text-align: center;
+             max-width: 900px;
+             margin: 0; /* Adjusted to add space on top */
+         }
+
+         .icon-link {
+             color: black;
+             text-decoration: none;
+             display: inline-block; /* Allows horizontal alignment with spacing */
+             margin: 20px 30px; /* Increased horizontal margin and space below icons */
+             vertical-align: top; /* Keeps items aligned at the top */
+             text-align: center; /* Centers the text under the icon */
+         }
+
+         .parallax-icon {
+             width: 100px;
+             height: 100px;
+             margin-bottom: 15px; /* Increased space between the icon and the text */
+             position: relative;
+             border-radius: 50%;
+             overflow: hidden;
+         }
+
+         .layer {
+             width: 100%;
+             height: 100%;
+             position: absolute;
+             top: 0;
+             left: 0;
+             background-size: cover;
+             border-radius: 50%;
+             transition: transform 0.2s ease-out;
+         }
+
+         @media (prefers-color-scheme: dark) {
+             body {
+                 color: #f4f4f4;
+                 background-color: #333;
+             }
+             .icon-link {
+                 color: white;
+             }
+         }
+     </style>
+ 
 </head>
 <body>
     <div class="container">
