@@ -94,7 +94,10 @@
         height: auto;
         max-height: 60vh;
     }
-
+badge {
+        width: 125;
+        height: 50;
+    }
 
         @media (prefers-color-scheme: dark) {
             body {
