@@ -30,6 +30,15 @@
         border-radius: 50%; /* Ensure layers are also circular */
         transition: transform 0.2s ease-out; /* Smooth transition for parallax effect */
     }
+.main {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-wrap: wrap;
+              text-align: center;
+              max-width: 900px;
+              margin: 0; /* Adjusted to add space on top */
+          }
     .container {
         text-align: center;
         max-width: 90%; /* Adjust container width */
