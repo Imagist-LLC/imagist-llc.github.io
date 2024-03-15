@@ -5,70 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagist</title>
     <meta name="apple-itunes-app" content="app-id=6478552032">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            text-align: center;
-            max-width: 900px;
-            margin: 0; /* Adjusted to add space on top */
-        }
-        
-        .icon-link {
-            color: black;
-            text-decoration: none;
-            display: inline-block; /* Allows horizontal alignment with spacing */
-            margin: 20px 30px; /* Increased horizontal margin and space below icons */
-            vertical-align: top; /* Keeps items aligned at the top */
-            text-align: center; /* Centers the text under the icon */
-        }
-        
-        .parallax-icon {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 15px; /* Increased space between the icon and the text */
-            position: relative;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-        
-        .layer {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-size: cover;
-            border-radius: 50%;
-            transition: transform 0.2s ease-out;
-        }
+    <link rel="stylesheet" href="/path/to/styles.css">
+<script src="/path/to/scripts.js"></script>
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                color: #f4f4f4;
-                background-color: #333;
-            }
-            .icon-link {
-                color: white;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -106,22 +45,6 @@
         </a>
        
     </div>
-    <script>
-        document.querySelectorAll('.parallax-icon').forEach(icon => {
-            icon.addEventListener('mousemove', e => {
-                const rect = icon.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const dx = x - (rect.width / 2);
-                const dy = y - (rect.height / 2);
 
-                const layerOffsets = [0.05, 0.1, 0.15];
-                icon.querySelectorAll('.layer').forEach((layer, index) => {
-                    const offset = layerOffsets[index % layerOffsets.length];
-                    layer.style.transform = `translate(${dx * offset}px, ${dy * offset}px)`;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
