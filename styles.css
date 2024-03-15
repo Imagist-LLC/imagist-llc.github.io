@@ -22,7 +22,7 @@
         align-items: center; /* Center children horizontally */
         height: 100%; /* Take full height of its parent */
     }
-        }
+        
          .icon-container {
         width: 100px; /* Adjust based on your icon size */
         height: 100px;
