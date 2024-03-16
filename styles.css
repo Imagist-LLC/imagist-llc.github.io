@@ -31,11 +31,12 @@
   50% { transform: scale(1.08); }
 }
 
-.icon-container:hover .layer:nth-child(2) {
+
+.icon-container:hover .layer:nth-of-type(2) {
     animation: bounce-effect-layer2 0.5s ease-out;
 }
 
-.icon-container:hover .layer:nth-child(3) {
+.icon-container:hover .layer:nth-of-type(3) {
     animation: bounce-effect-layer3 0.6s ease-out;
 }
 
