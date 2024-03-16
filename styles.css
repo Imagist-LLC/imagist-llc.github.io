@@ -46,6 +46,13 @@
 .icon-container.touched .layer:nth-of-type(3) {
   animation: bounce-effect-layer3 0.6s ease-out;
 }
+.layer:nth-of-type(2) {
+  animation: bounce-effect-layer2 var(--duration2) var(--delay2) ease-out;
+}
+
+.layer:nth-of-type(3) {
+  animation: bounce-effect-layer3 var(--duration3) var(--delay3) ease-out;
+}
 
 .large {
     width: 200px;
