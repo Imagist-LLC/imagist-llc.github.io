@@ -20,6 +20,11 @@
         position: relative;
         margin: 0 auto; /* Ensure it's centered horizontally */
     }
+.icon-container:hover .layer:nth-child(2), .icon-container:hover .layer:nth-child(3) {
+    transform: translateX(-2px) translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .large {
     width: 200px;
     height: 200px;
