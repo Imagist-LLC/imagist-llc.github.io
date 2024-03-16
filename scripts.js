@@ -1,4 +1,4 @@
-document.querySelectorAll('.parallax-icon').forEach(icon => {
+document.querySelectorAll('.icon-container').forEach(icon => {
   icon.addEventListener('touchstart', () => {
     icon.classList.add('touched');
   });
