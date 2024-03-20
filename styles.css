@@ -130,3 +130,15 @@ badge {
                 color: white;
             }
         }
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.footer img {
+    max-height: 100px;
+    max-width: 100%; /* Ensures the image is not larger than its container */
+}
