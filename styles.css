@@ -53,7 +53,33 @@
 .layer:nth-of-type(3) {
   animation: bounce-effect-layer3 var(--duration3) var(--delay3) ease-out;
 }
+#layer1 {
+    background-image: url('back.png');
+}
 
+#layer2 {
+    background-image: url('middle.png');
+}
+
+#layer3 {
+    background-image: url('front.png');
+}
+
+.bloom #layer1 { background-image: url('bloom/back.png'); }
+.bloom #layer2 { background-image: url('bloom/middle.png'); }
+.bloom #layer3 { background-image: url('bloom/front.png'); }
+
+.flourish #layer1 { background-image: url('flourish/back.png'); }
+.flourish #layer2 { background-image: url('flourish/middle.png'); }
+.flourish #layer3 { background-image: url('flourish/front.png'); }
+
+.rose #layer1 { background-image: url('rose/back.png'); }
+.rose #layer2 { background-image: url('rose/middle.png'); }
+.rose #layer3 { background-image: url('rose/front.png'); }
+
+.petal #layer1 { background-image: url('petal/back.png'); }
+.petal #layer2 { background-image: url('petal/middle.png'); }
+.petal #layer3 { background-image: url('petal/front.png'); }
 .large {
     width: 200px;
     height: 200px;
